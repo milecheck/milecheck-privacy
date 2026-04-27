@@ -6,143 +6,272 @@
   <title>Privacy Policy - MileCheck App</title>
   <link rel="icon" type="image/png" href="images/favicon.png">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      line-height: 1.6;
-      color: #e0e0e0;
-      background: #1a1a2e;
-      padding: 20px;
-      max-width: 800px;
-      margin: 0 auto;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --bg-card: #f3f7f5;
+      --accent: #00a868;
+      --accent-dim: rgba(0, 168, 104, 0.12);
+      --text: #111827;
+      --text-secondary: #6b7280;
+      --border: #dde8e3;
     }
-    h1 { color: #00d4ff; margin-bottom: 10px; }
-    h2 { color: #00d4ff; margin-top: 30px; margin-bottom: 15px; font-size: 1.3em; }
-    h3 { color: #00d4ff; margin-top: 20px; margin-bottom: 10px; font-size: 1.1em; }
-    p { margin-bottom: 15px; }
-    ul { margin-left: 20px; margin-bottom: 15px; }
-    li { margin-bottom: 8px; }
-    .last-updated { color: #888; font-size: 0.9em; margin-bottom: 30px; }
-    .highlight { background: #2a2a4e; padding: 15px; border-radius: 8px; margin: 20px 0; }
-    a { color: #00d4ff; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    a:hover { opacity: 0.75; }
+
+    /* ── Nav ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+    }
+    .nav-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .nav-brand img {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+    }
+    .nav-back {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+    .nav-back:hover { color: var(--accent); opacity: 1; }
+
+    /* ── Content ── */
+    .content {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    .last-updated {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 32px;
+    }
+
+    .intro {
+      font-size: 1.05rem;
+      color: var(--text);
+      margin-bottom: 24px;
+    }
+
+    .highlight {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      border-radius: 10px;
+      margin: 24px 0;
+      font-size: 0.95rem;
+    }
+    .highlight strong { color: var(--text); }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 40px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
+    p { margin-bottom: 14px; font-size: 0.97rem; }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 14px;
+    }
+    li {
+      margin-bottom: 7px;
+      font-size: 0.97rem;
+    }
+
+    strong { color: var(--text); }
   </style>
 </head>
 <body>
-  <h1>Privacy Policy</h1>
-  <p class="last-updated">Last updated: April 26, 2026</p>
 
-  <p>MileCheck ("the App") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <img src="images/favicon.png" alt="MileCheck icon">
+        MileCheck
+      </div>
+      <a class="nav-back" href="https://milecheckapp.com">← Back to milecheckapp.com</a>
+    </div>
+  </nav>
 
-  <div class="highlight">
-    <strong>Summary:</strong> Your precise location data stays on your device. We collect anonymous usage analytics to improve the app. Subscription purchases are processed by Apple and Google, not by MileCheck. We do not sell your data or share personally identifiable information with third parties.
-  </div>
+  <div class="content">
+    <h1>Privacy Policy</h1>
+    <p class="last-updated">Last updated: April 26, 2026</p>
 
-  <h2>Information We Access</h2>
+    <p class="intro">MileCheck ("the App") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
 
-  <h3>Location Data</h3>
-  <p>The App accesses your device's GPS location to:</p>
-  <ul>
-    <li><strong>Display your nearest mile marker</strong> - The core function of the app</li>
-    <li><strong>Show your current speed and direction</strong> - Helps you navigate</li>
-    <li><strong>Auto-detect your state</strong> - Loads the correct milepost data for your region</li>
-    <li><strong>Log trip sessions</strong> - If you choose to use the trip logging feature</li>
-  </ul>
-  <p><strong>Important:</strong> Your precise GPS coordinates are processed on your device and are never transmitted to our servers.</p>
+    <div class="highlight">
+      <strong>Summary:</strong> Your precise location data stays on your device. We collect anonymous usage analytics to improve the app. Subscription purchases are processed by Apple and Google, not by MileCheck. We do not sell your data or share personally identifiable information with third parties.
+    </div>
 
-  <h3>Trip Log Data</h3>
-  <p>If you use the trip logging feature, the App stores:</p>
-  <ul>
-    <li>Timestamps of logged locations</li>
-    <li>Mile marker positions during your trip</li>
-    <li>Route information</li>
-    <li>Any notes you add to a trip</li>
-  </ul>
-  <p>Trip data is stored locally on your device. You can delete individual trips or clear all trip history from the Log tab at any time.</p>
+    <h2>Information We Access</h2>
 
-  <h2>Subscriptions and Purchases</h2>
-  <p>MileCheck offers an optional premium subscription to unlock additional features (map, alerts, and trip logging). Here is how subscription data is handled:</p>
-  <ul>
-    <li><strong>Payment processing</strong> - All purchases are processed by Apple (App Store) or Google (Google Play). MileCheck never receives, stores, or has access to your payment information, credit card numbers, or billing details.</li>
-    <li><strong>Subscription management</strong> - We use <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat</a> to manage subscription status across platforms. RevenueCat receives an anonymous app user ID and your subscription status (active, expired, trial) from Apple or Google. RevenueCat does not receive your name, email, or payment details.</li>
-    <li><strong>What RevenueCat stores</strong> - Anonymous user identifier, subscription status, purchase dates, and platform (iOS/Android). See <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat's Privacy Policy</a>.</li>
-    <li><strong>Free trial</strong> - Trial eligibility is determined by Apple or Google based on your Apple ID or Google account, not by MileCheck.</li>
-    <li><strong>Managing your subscription</strong> - You can manage or cancel your subscription at any time through your device's App Store or Google Play settings.</li>
-  </ul>
-
-  <h2>Analytics Data We Collect</h2>
-  <p>To improve the App, we collect anonymous usage data through Google Firebase Analytics:</p>
-
-  <div class="highlight">
-    <strong>What we collect:</strong>
+    <h3>Location Data</h3>
+    <p>The App accesses your device's GPS location to:</p>
     <ul>
-      <li>Which screens/features you use (e.g., map view, alerts tab)</li>
-      <li>General usage patterns (session duration, frequency)</li>
-      <li>App version and device type (iOS/Android)</li>
-      <li>Feature usage (trip logging, alert views)</li>
+      <li><strong>Display your nearest mile marker</strong> — the core function of the app</li>
+      <li><strong>Show your current speed and direction</strong> — helps you navigate</li>
+      <li><strong>Auto-detect your state</strong> — loads the correct milepost data for your region</li>
+      <li><strong>Log trip sessions</strong> — if you choose to use the trip logging feature</li>
     </ul>
+    <p><strong>Important:</strong> Your precise GPS coordinates are processed on your device and are never transmitted to our servers.</p>
+
+    <h3>Trip Log Data</h3>
+    <p>If you use the trip logging feature, the App stores:</p>
+    <ul>
+      <li>Timestamps of logged locations</li>
+      <li>Mile marker positions during your trip</li>
+      <li>Route information</li>
+      <li>Any notes you add to a trip</li>
+    </ul>
+    <p>Trip data is stored locally on your device. You can delete individual trips or clear all trip history from the Log tab at any time.</p>
+
+    <h2>Subscriptions and Purchases</h2>
+    <p>MileCheck offers an optional premium subscription to unlock additional features (map, alerts, and trip logging). Here is how subscription data is handled:</p>
+    <ul>
+      <li><strong>Payment processing</strong> — All purchases are processed by Apple (App Store) or Google (Google Play). MileCheck never receives, stores, or has access to your payment information, credit card numbers, or billing details.</li>
+      <li><strong>Subscription management</strong> — We use <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat</a> to manage subscription status across platforms. RevenueCat receives an anonymous app user ID and your subscription status (active, expired, trial) from Apple or Google. RevenueCat does not receive your name, email, or payment details.</li>
+      <li><strong>What RevenueCat stores</strong> — Anonymous user identifier, subscription status, purchase dates, and platform (iOS/Android). See <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat's Privacy Policy</a>.</li>
+      <li><strong>Free trial</strong> — Trial eligibility is determined by Apple or Google based on your Apple ID or Google account, not by MileCheck.</li>
+      <li><strong>Managing your subscription</strong> — You can manage or cancel your subscription at any time through your device's App Store or Google Play settings.</li>
+    </ul>
+
+    <h2>Analytics Data We Collect</h2>
+    <p>To improve the App, we collect anonymous usage data through Google Firebase Analytics:</p>
+
+    <div class="highlight">
+      <strong>What we collect:</strong>
+      <ul style="margin-top:8px;">
+        <li>Which screens/features you use (e.g., map view, alerts tab)</li>
+        <li>General usage patterns (session duration, frequency)</li>
+        <li>App version and device type (iOS/Android)</li>
+        <li>Feature usage (trip logging, alert views)</li>
+      </ul>
+    </div>
+
+    <p><strong>What we do not collect through analytics:</strong></p>
+    <ul>
+      <li>Your precise GPS location or coordinates</li>
+      <li>Your name, email, or contact information</li>
+      <li>Trip log contents or travel history</li>
+      <li>Payment or subscription details</li>
+      <li>Any personally identifiable information</li>
+    </ul>
+
+    <h2>How Your Data is Stored</h2>
+    <ul>
+      <li><strong>Location data</strong> — Processed on your device in real-time, not stored permanently or transmitted</li>
+      <li><strong>Trip logs</strong> — Stored locally on your device. You control when to delete them.</li>
+      <li><strong>Settings preferences</strong> — Stored locally (theme, display options, etc.)</li>
+      <li><strong>Subscription status</strong> — Cached locally by RevenueCat SDK for offline access. Synced with Apple/Google servers when online.</li>
+      <li><strong>Analytics data</strong> — Stored securely by Google Firebase, anonymized and aggregated</li>
+    </ul>
+
+    <h2>Third-Party Services</h2>
+    <p>The App uses the following third-party services:</p>
+    <ul>
+      <li><strong>Google Firebase Analytics</strong> — Anonymous usage statistics to improve the app. See <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a></li>
+      <li><strong>Google Maps</strong> — Map display on both iOS and Android. See <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a></li>
+      <li><strong>RevenueCat</strong> — Subscription management service. Processes anonymous subscription data. See <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat's Privacy Policy</a></li>
+      <li><strong>Apple App Store / Google Play</strong> — Process subscription purchases. See <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a> and <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a></li>
+      <li><strong>State DOT APIs</strong> — Road condition data (Washington WSDOT, Oregon TripCheck, Montana 511, Arizona DOT, Utah UDOT, Idaho 511, Alaska 511, Colorado COtrip). No personal data is sent to these services.</li>
+    </ul>
+
+    <h2>Data Sharing</h2>
+    <p>We do not sell, trade, or share your personal data with any third parties for marketing purposes. Anonymous, aggregated analytics may be used for business purposes (e.g., demonstrating app usage to potential partners).</p>
+
+    <h2>Your Rights</h2>
+    <p>You have the right to:</p>
+    <ul>
+      <li><strong>Access</strong> — Request information about data we have collected</li>
+      <li><strong>Delete</strong> — Clear all local data by uninstalling the app or clearing app data</li>
+      <li><strong>Opt-out</strong> — Disable analytics by using the app in offline mode or blocking Firebase domains</li>
+      <li><strong>Cancel subscription</strong> — Manage or cancel your subscription at any time through your App Store or Google Play settings</li>
+    </ul>
+
+    <h2>Children's Privacy</h2>
+    <p>The App does not knowingly collect information from children under 13. The App is intended for drivers and travelers of legal driving age.</p>
+
+    <h2>Data Deletion</h2>
+    <p>To delete your data:</p>
+    <ul>
+      <li>Trip logs can be deleted individually or all at once from the Log tab</li>
+      <li>Uninstalling the app removes all locally stored data (trips, settings, cached subscription status)</li>
+      <li>Analytics data is automatically anonymized and cannot be linked to you</li>
+      <li>To cancel your subscription, use your device's App Store or Google Play subscription settings</li>
+    </ul>
+
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have questions about this Privacy Policy or the App's privacy practices, please contact us at:</p>
+    <p><strong>Email:</strong> <a href="mailto:leah@milecheckapp.com">leah@milecheckapp.com</a></p>
+
+    <h2>Your Consent</h2>
+    <p>By using MileCheck, you consent to this Privacy Policy and agree to its terms, including the collection of anonymous analytics data and subscription management through RevenueCat.</p>
   </div>
 
-  <p><strong>What we DO NOT collect through analytics:</strong></p>
-  <ul>
-    <li>Your precise GPS location or coordinates</li>
-    <li>Your name, email, or contact information</li>
-    <li>Trip log contents or travel history</li>
-    <li>Payment or subscription details</li>
-    <li>Any personally identifiable information</li>
-  </ul>
-
-  <h2>How Your Data is Stored</h2>
-
-  <ul>
-    <li><strong>Location data</strong> - Processed on your device in real-time, not stored permanently or transmitted</li>
-    <li><strong>Trip logs</strong> - Stored locally on your device. You control when to delete them.</li>
-    <li><strong>Settings preferences</strong> - Stored locally (theme, display options, etc.)</li>
-    <li><strong>Subscription status</strong> - Cached locally by RevenueCat SDK for offline access. Synced with Apple/Google servers when online.</li>
-    <li><strong>Analytics data</strong> - Stored securely by Google Firebase, anonymized and aggregated</li>
-  </ul>
-
-  <h2>Third-Party Services</h2>
-  <p>The App uses the following third-party services:</p>
-  <ul>
-    <li><strong>Google Firebase Analytics</strong> - Anonymous usage statistics to improve the app. See <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a></li>
-    <li><strong>Google Maps</strong> - Map display on both iOS and Android. See <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a></li>
-    <li><strong>RevenueCat</strong> - Subscription management service. Processes anonymous subscription data. See <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat's Privacy Policy</a></li>
-    <li><strong>Apple App Store / Google Play</strong> - Process subscription purchases. See <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a> and <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a></li>
-    <li><strong>State DOT APIs</strong> - Road condition data (Washington WSDOT, Oregon TripCheck, Montana 511, Arizona DOT, Utah UDOT, Idaho 511, Alaska 511, Colorado COtrip). No personal data is sent to these services.</li>
-  </ul>
-
-  <h2>Data Sharing</h2>
-  <p>We do not sell, trade, or share your personal data with any third parties for marketing purposes. Anonymous, aggregated analytics may be used for business purposes (e.g., demonstrating app usage to potential partners).</p>
-
-  <h2>Your Rights</h2>
-  <p>You have the right to:</p>
-  <ul>
-    <li><strong>Access</strong> - Request information about data we have collected</li>
-    <li><strong>Delete</strong> - Clear all local data by uninstalling the app or clearing app data</li>
-    <li><strong>Opt-out</strong> - Disable analytics by using the app in offline mode or blocking Firebase domains</li>
-    <li><strong>Cancel subscription</strong> - Manage or cancel your subscription at any time through your App Store or Google Play settings</li>
-  </ul>
-
-  <h2>Children's Privacy</h2>
-  <p>The App does not knowingly collect information from children under 13. The App is intended for drivers and travelers of legal driving age.</p>
-
-  <h2>Data Deletion</h2>
-  <p>To delete your data:</p>
-  <ul>
-    <li>Trip logs can be deleted individually or all at once from the Log tab</li>
-    <li>Uninstalling the app removes all locally stored data (trips, settings, cached subscription status)</li>
-    <li>Analytics data is automatically anonymized and cannot be linked to you</li>
-    <li>To cancel your subscription, use your device's App Store or Google Play subscription settings</li>
-  </ul>
-
-  <h2>Changes to This Policy</h2>
-  <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
-
-  <h2>Contact Us</h2>
-  <p>If you have questions about this Privacy Policy or the App's privacy practices, please contact us at:</p>
-  <p><strong>Email:</strong> <a href="mailto:leah@milecheckapp.com">leah@milecheckapp.com</a></p>
-
-  <h2>Your Consent</h2>
-  <p>By using MileCheck, you consent to this Privacy Policy and agree to its terms, including the collection of anonymous analytics data and subscription management through RevenueCat.</p>
 </body>
 </html>
