@@ -157,12 +157,12 @@
 
   <div class="content">
     <h1>Privacy Policy</h1>
-    <p class="last-updated">Last updated: April 26, 2026</p>
+    <p class="last-updated">Last updated: April 27, 2026</p>
 
     <p class="intro">MileCheck ("the App") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
 
     <div class="highlight">
-      <strong>Summary:</strong> Your precise location data stays on your device. We collect anonymous usage analytics to improve the app. Subscription purchases are processed by Apple and Google, not by MileCheck. We do not sell your data or share personally identifiable information with third parties.
+      <strong>Summary:</strong> Your precise location data stays on your device. We use Sentry to collect anonymous crash reports to improve stability. Subscription purchases are processed by Apple and Google, not by MileCheck. We do not sell your data or share personally identifiable information with third parties.
     </div>
 
     <h2>Information We Access</h2>
@@ -197,27 +197,28 @@
       <li><strong>Managing your subscription</strong> — You can manage or cancel your subscription at any time through your device's App Store or Google Play settings.</li>
     </ul>
 
-    <h2>Analytics Data We Collect</h2>
-    <p>To improve the App, we collect anonymous usage data through Google Firebase Analytics:</p>
+    <h2>Crash Reports and Error Logging</h2>
+    <p>We use <a href="https://sentry.io/privacy/" target="_blank">Sentry</a> to collect anonymous crash reports and error logs to fix bugs and improve stability.</p>
 
     <div class="highlight">
-      <strong>What we collect:</strong>
+      <strong>What Sentry receives:</strong>
       <ul style="margin-top:8px;">
-        <li>Which screens/features you use (e.g., map view, alerts tab)</li>
-        <li>General usage patterns (session duration, frequency)</li>
-        <li>App version and device type (iOS/Android)</li>
-        <li>Feature usage (trip logging, alert views)</li>
+        <li>App version and device model/OS version</li>
+        <li>Error stack traces</li>
+        <li>Anonymous breadcrumbs of in-app actions (e.g., "opened Map tab," "tapped Premium button") that help us reproduce bugs</li>
       </ul>
     </div>
 
-    <p><strong>What we do not collect through analytics:</strong></p>
+    <p><strong>What Sentry does NOT receive:</strong></p>
     <ul>
-      <li>Your precise GPS location or coordinates</li>
+      <li>Your GPS location or coordinates</li>
+      <li>Your trip log data or travel history</li>
       <li>Your name, email, or contact information</li>
-      <li>Trip log contents or travel history</li>
       <li>Payment or subscription details</li>
       <li>Any personally identifiable information</li>
     </ul>
+
+    <p>We do <strong>not</strong> currently collect product or usage analytics (screen views, session counts, feature usage). We may add analytics in a future update and will update this policy if we do.</p>
 
     <h2>How Your Data is Stored</h2>
     <ul>
@@ -225,13 +226,13 @@
       <li><strong>Trip logs</strong> — Stored locally on your device. You control when to delete them.</li>
       <li><strong>Settings preferences</strong> — Stored locally (theme, display options, etc.)</li>
       <li><strong>Subscription status</strong> — Cached locally by RevenueCat SDK for offline access. Synced with Apple/Google servers when online.</li>
-      <li><strong>Analytics data</strong> — Stored securely by Google Firebase, anonymized and aggregated</li>
+      <li><strong>Crash reports</strong> — Sent to Sentry for error analysis, anonymized, stored for 90 days.</li>
     </ul>
 
     <h2>Third-Party Services</h2>
     <p>The App uses the following third-party services:</p>
     <ul>
-      <li><strong>Google Firebase Analytics</strong> — Anonymous usage statistics to improve the app. See <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a></li>
+      <li><strong>Sentry</strong> — Anonymous crash reports and error logs to improve app stability. See <a href="https://sentry.io/privacy/" target="_blank">Sentry's Privacy Policy</a></li>
       <li><strong>Google Maps</strong> — Map display on both iOS and Android. See <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a></li>
       <li><strong>RevenueCat</strong> — Subscription management service. Processes anonymous subscription data. See <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat's Privacy Policy</a></li>
       <li><strong>Apple App Store / Google Play</strong> — Process subscription purchases. See <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a> and <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a></li>
@@ -239,14 +240,14 @@
     </ul>
 
     <h2>Data Sharing</h2>
-    <p>We do not sell, trade, or share your personal data with any third parties for marketing purposes. Anonymous, aggregated analytics may be used for business purposes (e.g., demonstrating app usage to potential partners).</p>
+    <p>We do not sell, trade, or share your personal data with any third parties for marketing purposes.</p>
 
     <h2>Your Rights</h2>
     <p>You have the right to:</p>
     <ul>
       <li><strong>Access</strong> — Request information about data we have collected</li>
       <li><strong>Delete</strong> — Clear all local data by uninstalling the app or clearing app data</li>
-      <li><strong>Opt-out</strong> — Disable analytics by using the app in offline mode or blocking Firebase domains</li>
+      <li><strong>Opt-out of crash reporting</strong> — Contact <a href="mailto:info@milecheckapp.com">info@milecheckapp.com</a> to request deletion of any stored crash data</li>
       <li><strong>Cancel subscription</strong> — Manage or cancel your subscription at any time through your App Store or Google Play settings</li>
     </ul>
 
@@ -258,7 +259,7 @@
     <ul>
       <li>Trip logs can be deleted individually or all at once from the Log tab</li>
       <li>Uninstalling the app removes all locally stored data (trips, settings, cached subscription status)</li>
-      <li>Analytics data is automatically anonymized and cannot be linked to you</li>
+      <li>Crash reports sent to Sentry are anonymized and automatically deleted after 90 days</li>
       <li>To cancel your subscription, use your device's App Store or Google Play subscription settings</li>
     </ul>
 
@@ -270,7 +271,7 @@
     <p><strong>Email:</strong> <a href="mailto:info@milecheckapp.com">info@milecheckapp.com</a></p>
 
     <h2>Your Consent</h2>
-    <p>By using MileCheck, you consent to this Privacy Policy and agree to its terms, including the collection of anonymous analytics data and subscription management through RevenueCat.</p>
+    <p>By using MileCheck, you consent to this Privacy Policy and agree to its terms, including the collection of anonymous crash reports via Sentry and subscription management through RevenueCat.</p>
   </div>
 
 </body>
