@@ -3,172 +3,300 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy - MileCheck App</title>
+  <title>Privacy Policy — MileCheck</title>
+  <meta name="description" content="MileCheck privacy policy. Your precise location stays on your device. We do not sell your data.">
   <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #ffffff;
-      --bg-card: #f3f7f5;
-      --accent: #00a868;
-      --accent-dim: rgba(0, 168, 104, 0.12);
-      --text: #111827;
-      --text-secondary: #6b7280;
-      --border: #dde8e3;
-    }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #FFFFFF;
+      color: #000000;
+      line-height: 1.6;
+      font-weight: 400;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: opacity 0.2s;
+      color: #000;
+      text-decoration: underline;
+      text-decoration-color: #999;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
     }
-    a:hover { opacity: 0.75; }
+    a:hover { text-decoration-color: #000; }
 
-    /* ── Nav ── */
-    .nav {
+    ul { list-style: none; padding: 0; }
+
+    .mono {
+      font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-feature-settings: "tnum";
+    }
+
+    /* ===== Site header ===== */
+    .site-header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid #E5E5E5;
     }
-    .nav-inner {
-      max-width: 860px;
+    .header-inner {
+      max-width: 720px;
       margin: 0 auto;
       padding: 0 24px;
-      height: 60px;
+      height: 64px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-    }
-    .nav-brand {
-      display: flex;
       align-items: center;
-      gap: 8px;
-      color: var(--text);
-      font-weight: 700;
-      font-size: 1rem;
     }
-    .nav-brand img {
-      width: 30px;
-      height: 30px;
-      border-radius: 7px;
+    .brand {
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #000;
+      text-decoration: none;
     }
     .nav-back {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 500;
+      color: #525252;
+      text-decoration: none;
     }
-    .nav-back:hover { color: var(--accent); opacity: 1; }
+    .nav-back:hover { color: #000; }
 
-    /* ── Content ── */
+    /* ===== Content ===== */
     .content {
-      max-width: 760px;
+      max-width: 720px;
       margin: 0 auto;
-      padding: 48px 24px 80px;
+      padding: 64px 24px 48px;
+    }
+
+    .doc-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 16px;
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 48px;
       font-weight: 800;
-      color: var(--text);
-      margin-bottom: 6px;
-      letter-spacing: -0.02em;
+      letter-spacing: -1.8px;
+      line-height: 1.05;
+      color: #000;
+      margin-bottom: 12px;
     }
 
     .last-updated {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      margin-bottom: 32px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #999;
+      margin-bottom: 36px;
+      letter-spacing: 0.2px;
     }
+    .last-updated .mono { color: #000; font-weight: 600; }
 
     .intro {
-      font-size: 1.05rem;
-      color: var(--text);
-      margin-bottom: 24px;
+      font-size: 17px;
+      line-height: 1.6;
+      color: #000;
+      margin-bottom: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid #E5E5E5;
     }
 
+    /* ===== Highlight blocks (was rounded card; now hairline block) ===== */
     .highlight {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--accent);
-      padding: 16px 20px;
-      border-radius: 10px;
-      margin: 24px 0;
-      font-size: 0.95rem;
+      padding: 24px 0;
+      border-top: 1px solid #E5E5E5;
+      border-bottom: 1px solid #E5E5E5;
+      margin: 28px 0;
     }
-    .highlight strong { color: var(--text); }
-
-    h2 {
-      font-size: 1.2rem;
+    .highlight-label {
+      font-size: 10px;
       font-weight: 700;
-      color: var(--text);
-      margin-top: 40px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #999;
       margin-bottom: 12px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid var(--border);
+    }
+    .highlight-body {
+      font-size: 15px;
+      font-weight: 400;
+      color: #000;
+      line-height: 1.55;
+    }
+    .highlight-body strong { font-weight: 600; }
+    .highlight ul {
+      margin-top: 10px;
+      padding-left: 0;
+    }
+    .highlight li {
+      font-size: 14px;
+      color: #525252;
+      padding: 6px 0;
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .highlight li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 8px;
+      height: 1px;
+      background: #999;
+    }
+
+    /* ===== Section headings ===== */
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      line-height: 1.2;
+      color: #000;
+      margin-top: 48px;
+      margin-bottom: 18px;
+      padding-top: 28px;
+      border-top: 1px solid #E5E5E5;
     }
 
     h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-top: 20px;
-      margin-bottom: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0;
+      color: #000;
+      margin-top: 24px;
+      margin-bottom: 10px;
     }
 
-    p { margin-bottom: 14px; font-size: 0.97rem; }
-
-    ul {
-      margin-left: 20px;
+    p {
+      font-size: 15px;
+      font-weight: 400;
+      color: #525252;
+      line-height: 1.65;
       margin-bottom: 14px;
     }
-    li {
-      margin-bottom: 7px;
-      font-size: 0.97rem;
+    p strong { color: #000; font-weight: 600; }
+
+    /* ===== Lists ===== */
+    .content ul:not(.highlight ul) {
+      margin: 12px 0 18px 0;
+      padding-left: 0;
+    }
+    .content ul:not(.highlight ul) li {
+      font-size: 15px;
+      color: #525252;
+      padding: 8px 0;
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.55;
+      border-bottom: 1px solid #F2F2F2;
+    }
+    .content ul:not(.highlight ul) li:last-child { border-bottom: none; }
+    .content ul:not(.highlight ul) li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 18px;
+      width: 10px;
+      height: 1px;
+      background: #999;
+    }
+    .content ul:not(.highlight ul) li strong { color: #000; font-weight: 600; }
+
+    /* ===== Footer ===== */
+    .site-footer {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 32px 24px 48px;
+      border-top: 1px solid #E5E5E5;
+    }
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .footer-brand {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: #000;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .footer-links a {
+      color: #525252;
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: #000; }
+    .footer-fineprint {
+      font-size: 11px;
+      font-weight: 500;
+      color: #999;
+      letter-spacing: 0.2px;
+      line-height: 1.5;
     }
 
-    strong { color: var(--text); }
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      .content { padding: 40px 20px 32px; }
+      h1 { font-size: 36px; letter-spacing: -1.2px; }
+      h2 { font-size: 19px; margin-top: 36px; padding-top: 24px; }
+      .intro { font-size: 16px; }
+      .header-inner { padding: 0 20px; }
+      .site-footer { padding: 24px 20px 36px; }
+      .footer-links { gap: 16px; flex-wrap: wrap; }
+    }
   </style>
 </head>
 <body>
 
-  <nav class="nav">
-    <div class="nav-inner">
-      <div class="nav-brand">
-        <img src="images/favicon.png" alt="MileCheck icon">
-        MileCheck
-      </div>
-      <a class="nav-back" href="https://milecheckapp.com">← Back to milecheckapp.com</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="https://milecheckapp.com" class="brand">MileCheck</a>
+      <a href="https://milecheckapp.com" class="nav-back">← milecheckapp.com</a>
     </div>
-  </nav>
+  </header>
 
-  <div class="content">
+  <main class="content">
+    <p class="doc-label">Legal</p>
     <h1>Privacy Policy</h1>
-    <p class="last-updated">Last updated: April 27, 2026</p>
+    <p class="last-updated">Last updated <span class="mono">April 27, 2026</span></p>
 
-    <p class="intro">MileCheck ("the App") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
+    <p class="intro">MileCheck (&ldquo;the App&rdquo;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
 
     <div class="highlight">
-      <strong>Summary:</strong> Your precise location data stays on your device. We use Sentry to collect anonymous crash reports to improve stability. Subscription purchases are processed by Apple and Google, not by MileCheck. We do not sell your data or share personally identifiable information with third parties.
+      <div class="highlight-label">Summary</div>
+      <p class="highlight-body">Your precise location data stays on your device. We use Sentry to collect anonymous crash reports to improve stability. Subscription purchases are processed by Apple and Google, not by MileCheck. We do not sell your data or share personally identifiable information with third parties.</p>
     </div>
 
     <h2>Information We Access</h2>
 
     <h3>Location Data</h3>
-    <p>The App accesses your device's GPS location to:</p>
+    <p>The App accesses your device&rsquo;s GPS location to:</p>
     <ul>
       <li><strong>Display your nearest mile marker</strong> — the core function of the app</li>
       <li><strong>Show your current speed and direction</strong> — helps you navigate</li>
@@ -191,21 +319,21 @@
     <p>MileCheck offers an optional premium subscription to unlock additional features (map, alerts, and trip logging). Here is how subscription data is handled:</p>
     <ul>
       <li><strong>Payment processing</strong> — All purchases are processed by Apple (App Store) or Google (Google Play). MileCheck never receives, stores, or has access to your payment information, credit card numbers, or billing details.</li>
-      <li><strong>Subscription management</strong> — We use <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat</a> to manage subscription status across platforms. RevenueCat receives an anonymous app user ID and your subscription status (active, expired, trial) from Apple or Google. RevenueCat does not receive your name, email, or payment details.</li>
-      <li><strong>What RevenueCat stores</strong> — Anonymous user identifier, subscription status, purchase dates, and platform (iOS/Android). See <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat's Privacy Policy</a>.</li>
+      <li><strong>Subscription management</strong> — We use <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat</a> to manage subscription status across platforms. RevenueCat receives an anonymous app user ID and your subscription status (active, expired, trial) from Apple or Google. RevenueCat does not receive your name, email, or payment details.</li>
+      <li><strong>What RevenueCat stores</strong> — Anonymous user identifier, subscription status, purchase dates, and platform (iOS/Android). See <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat&rsquo;s Privacy Policy</a>.</li>
       <li><strong>Free trial</strong> — Trial eligibility is determined by Apple or Google based on your Apple ID or Google account, not by MileCheck.</li>
-      <li><strong>Managing your subscription</strong> — You can manage or cancel your subscription at any time through your device's App Store or Google Play settings.</li>
+      <li><strong>Managing your subscription</strong> — You can manage or cancel your subscription at any time through your device&rsquo;s App Store or Google Play settings.</li>
     </ul>
 
     <h2>Crash Reports and Error Logging</h2>
-    <p>We use <a href="https://sentry.io/privacy/" target="_blank">Sentry</a> to collect anonymous crash reports and error logs to fix bugs and improve stability.</p>
+    <p>We use <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Sentry</a> to collect anonymous crash reports and error logs to fix bugs and improve stability.</p>
 
     <div class="highlight">
-      <strong>What Sentry receives:</strong>
-      <ul style="margin-top:8px;">
+      <div class="highlight-label">What Sentry receives</div>
+      <ul>
         <li>App version and device model/OS version</li>
         <li>Error stack traces</li>
-        <li>Anonymous breadcrumbs of in-app actions (e.g., "opened Map tab," "tapped Premium button") that help us reproduce bugs</li>
+        <li>Anonymous breadcrumbs of in-app actions (e.g., &ldquo;opened Map tab,&rdquo; &ldquo;tapped Premium button&rdquo;) that help us reproduce bugs</li>
       </ul>
     </div>
 
@@ -232,10 +360,10 @@
     <h2>Third-Party Services</h2>
     <p>The App uses the following third-party services:</p>
     <ul>
-      <li><strong>Sentry</strong> — Anonymous crash reports and error logs to improve app stability. See <a href="https://sentry.io/privacy/" target="_blank">Sentry's Privacy Policy</a></li>
-      <li><strong>Google Maps</strong> — Map display on both iOS and Android. See <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a></li>
-      <li><strong>RevenueCat</strong> — Subscription management service. Processes anonymous subscription data. See <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat's Privacy Policy</a></li>
-      <li><strong>Apple App Store / Google Play</strong> — Process subscription purchases. See <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a> and <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a></li>
+      <li><strong>Sentry</strong> — Anonymous crash reports and error logs to improve app stability. See <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Sentry&rsquo;s Privacy Policy</a></li>
+      <li><strong>Google Maps</strong> — Map display on both iOS and Android. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&rsquo;s Privacy Policy</a></li>
+      <li><strong>RevenueCat</strong> — Subscription management service. Processes anonymous subscription data. See <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat&rsquo;s Privacy Policy</a></li>
+      <li><strong>Apple App Store / Google Play</strong> — Process subscription purchases. See <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple&rsquo;s Privacy Policy</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&rsquo;s Privacy Policy</a></li>
       <li><strong>State DOT APIs</strong> — Road condition data (Washington WSDOT, Oregon TripCheck, Montana 511, Arizona DOT, Utah UDOT, Idaho 511, Alaska 511, Colorado COtrip). No personal data is sent to these services.</li>
     </ul>
 
@@ -251,7 +379,7 @@
       <li><strong>Cancel subscription</strong> — Manage or cancel your subscription at any time through your App Store or Google Play settings</li>
     </ul>
 
-    <h2>Children's Privacy</h2>
+    <h2>Children&rsquo;s Privacy</h2>
     <p>The App does not knowingly collect information from children under 13. The App is intended for drivers and travelers of legal driving age.</p>
 
     <h2>Data Deletion</h2>
@@ -260,19 +388,30 @@
       <li>Trip logs can be deleted individually or all at once from the Log tab</li>
       <li>Uninstalling the app removes all locally stored data (trips, settings, cached subscription status)</li>
       <li>Crash reports sent to Sentry are anonymized and automatically deleted after 90 days</li>
-      <li>To cancel your subscription, use your device's App Store or Google Play subscription settings</li>
+      <li>To cancel your subscription, use your device&rsquo;s App Store or Google Play subscription settings</li>
     </ul>
 
     <h2>Changes to This Policy</h2>
     <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
 
     <h2>Contact Us</h2>
-    <p>If you have questions about this Privacy Policy or the App's privacy practices, please contact us at:</p>
+    <p>If you have questions about this Privacy Policy or the App&rsquo;s privacy practices, please contact us at:</p>
     <p><strong>Email:</strong> <a href="mailto:info@milecheckapp.com">info@milecheckapp.com</a></p>
 
     <h2>Your Consent</h2>
     <p>By using MileCheck, you consent to this Privacy Policy and agree to its terms, including the collection of anonymous crash reports via Sentry and subscription management through RevenueCat.</p>
-  </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-row">
+      <div class="footer-brand">MileCheck</div>
+      <div class="footer-links">
+        <a href="https://milecheckapp.com">Home</a>
+        <a href="mailto:info@milecheckapp.com">Contact</a>
+      </div>
+    </div>
+    <p class="footer-fineprint">&copy; 2026 MileCheck. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
