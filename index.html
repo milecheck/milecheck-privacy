@@ -284,7 +284,7 @@
   <main class="content">
     <p class="doc-label">Legal</p>
     <h1>Privacy Policy</h1>
-    <p class="last-updated">Last updated <span class="mono">April 27, 2026</span></p>
+    <p class="last-updated">Last updated <span class="mono">May 26, 2026</span></p>
 
     <p class="intro">MileCheck (&ldquo;the App&rdquo;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
 
@@ -298,22 +298,24 @@
     <h3>Location Data</h3>
     <p>The App accesses your device&rsquo;s GPS location to:</p>
     <ul>
-      <li><strong>Display your nearest mile marker</strong> — the core function of the app</li>
-      <li><strong>Show your current speed and direction</strong> — helps you navigate</li>
-      <li><strong>Auto-detect your state</strong> — loads the correct milepost data for your region</li>
+      <li><strong>Display your nearest mile marker</strong> — the core function of the app, calculated on your device</li>
+      <li><strong>Show your current speed and direction</strong> — helps you stay oriented on the road</li>
+      <li><strong>Auto-detect your state</strong> — loads the correct milepost and alert data for your region</li>
       <li><strong>Log trip sessions</strong> — if you choose to use the trip logging feature</li>
+      <li><strong>Plan a highway corridor</strong> — if you use the Premium+ navigation feature, your current location and your typed destination are sent to Google Routes API and Google Places API via our server. See the Google Maps Platform entry under Third-Party Services for details.</li>
     </ul>
-    <p><strong>Important:</strong> Your precise GPS coordinates are processed on your device and are never transmitted to our servers.</p>
+    <p><strong>Important:</strong> Your precise GPS coordinates are processed on your device for milepost calculations and are never stored on our servers. Approximate location is sent to third parties to retrieve weather, route planning, and road alert data, as detailed below.</p>
 
     <h3>Trip Log Data</h3>
-    <p>If you use the trip logging feature, the App stores:</p>
+    <p>If you use the trip logging feature, the App stores on your device:</p>
     <ul>
-      <li>Timestamps of logged locations</li>
+      <li>Start and end timestamps</li>
       <li>Mile marker positions during your trip</li>
-      <li>Route information</li>
+      <li>Route, direction, and distance</li>
       <li>Any notes you add to a trip</li>
+      <li>An optional GPS path of the trip (used to draw a mini-map of your route in the Trips tab)</li>
     </ul>
-    <p>Trip data is stored locally on your device. You can delete individual trips or clear all trip history from the Log tab at any time.</p>
+    <p>Trip data is stored locally on your device. You can configure how long trips are kept (3, 7, 14, 30, 90 days, or forever) in Settings, delete individual trips, or clear all trip history from the Trips tab at any time.</p>
 
     <h2>Subscriptions and Purchases</h2>
     <p>MileCheck offers an optional premium subscription to unlock additional features (map, alerts, and trip logging). Here is how subscription data is handled:</p>
@@ -358,13 +360,16 @@
     </ul>
 
     <h2>Third-Party Services</h2>
-    <p>The App uses the following third-party services:</p>
+    <p>The App uses the following third-party services. Where the App sends data to a third party, we describe what is sent.</p>
     <ul>
+      <li><strong>Cloudflare Workers (our server)</strong> — The App routes some requests through a Cloudflare Worker we operate, which proxies requests to state DOT APIs and Google Maps Platform APIs. No personally identifiable information is sent through the Worker; requests carry only the state code, route coordinates, or destination text needed to fulfill the request.</li>
+      <li><strong>State DOT APIs</strong> — Road condition, incident, and closure data from official state Department of Transportation APIs in 31 U.S. states (the current list of supported states is visible in the app&rsquo;s Settings). Requests are proxied through our Cloudflare Worker. No personal data is sent to these services.</li>
+      <li><strong>National Weather Service (NWS)</strong> — The App fetches local weather (temperature, conditions, wind, sunrise/sunset) from the U.S. National Weather Service API. Your approximate location is sent to NWS to retrieve weather for your area. No personal information is sent.</li>
+      <li><strong>Google Maps Platform (map tiles)</strong> — Map display on both iOS and Android uses Google Maps tiles. Google may receive map tile requests for your viewport. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&rsquo;s Privacy Policy</a>.</li>
+      <li><strong>Google Routes API and Places API (Premium+ navigation only)</strong> — The Premium+ navigation feature uses Google Routes API and Places API (via our Cloudflare Worker) to search destinations and calculate highway corridor route options. When you use these features, your current location, the text you type into the destination search, and the chosen destination coordinates are sent to Google via our server. If you do not use Premium+ navigation, no data is sent to Google Routes or Places. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&rsquo;s Privacy Policy</a>.</li>
       <li><strong>Sentry</strong> — Anonymous crash reports and error logs to improve app stability. See <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Sentry&rsquo;s Privacy Policy</a></li>
-      <li><strong>Google Maps</strong> — Map display on both iOS and Android. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&rsquo;s Privacy Policy</a></li>
       <li><strong>RevenueCat</strong> — Subscription management service. Processes anonymous subscription data. See <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat&rsquo;s Privacy Policy</a></li>
       <li><strong>Apple App Store / Google Play</strong> — Process subscription purchases. See <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple&rsquo;s Privacy Policy</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&rsquo;s Privacy Policy</a></li>
-      <li><strong>State DOT APIs</strong> — Road condition data (Washington WSDOT, Oregon TripCheck, Montana 511, Arizona DOT, Utah UDOT, Idaho 511, Alaska 511, Colorado COtrip). No personal data is sent to these services.</li>
     </ul>
 
     <h2>Data Sharing</h2>
