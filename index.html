@@ -284,13 +284,13 @@
   <main class="content">
     <p class="doc-label">Legal</p>
     <h1>Privacy Policy</h1>
-    <p class="last-updated">Last updated <span class="mono">May 26, 2026</span></p>
+    <p class="last-updated">Last updated <span class="mono">June 5, 2026</span></p>
 
     <p class="intro">MileCheck (&ldquo;the App&rdquo;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
 
     <div class="highlight">
       <div class="highlight-label">Summary</div>
-      <p class="highlight-body">Your precise location data stays on your device. We use Sentry to collect anonymous crash reports to improve stability. Subscription purchases are processed by Apple and Google, not by MileCheck. We do not sell your data or share personally identifiable information with third parties.</p>
+      <p class="highlight-body">Your precise location data stays on your device. We use Sentry to collect anonymous crash reports to improve stability. Subscription purchases are processed by Apple and Google, not by MileCheck. We do not sell your data or share personally identifiable information with third parties. If you opt into bridge-opening notifications, we store an anonymous device notification token and the bridges you follow on our server &mdash; no location, no personal information.</p>
     </div>
 
     <h2>Information We Access</h2>
@@ -350,11 +350,22 @@
 
     <p>We do <strong>not</strong> currently collect product or usage analytics (screen views, session counts, feature usage). We may add analytics in a future update and will update this policy if we do.</p>
 
+    <h2>Push Notifications</h2>
+    <p>MileCheck offers optional push notifications for Seattle drawbridge openings. They are <strong>off by default</strong> &mdash; you receive them only if you choose to &ldquo;follow&rdquo; one or more bridges in the app.</p>
+    <p>So that we can notify you when a followed bridge is raised <strong>even while the app is closed</strong>, we store the following on our server (Cloudflare) when you follow a bridge:</p>
+    <ul>
+      <li>An anonymous <strong>push notification token</strong> for your device (issued by Apple or Google via Expo). This is a device identifier used solely to deliver notifications. It is <strong>not</strong> linked to your name, email, or any personal information, and MileCheck has no user-account system.</li>
+      <li>The <strong>list of bridges you follow</strong>, so we only notify you about the bridges you care about.</li>
+    </ul>
+    <p>We do <strong>not</strong> store your location, trips, or any personal data on our server. The push token is shared with the notification delivery services &mdash; <strong>Expo Push, Apple Push Notification service (APNs), and Google Firebase Cloud Messaging (FCM)</strong> &mdash; for the sole purpose of delivering these notifications. We never use it for tracking or advertising.</p>
+    <p><strong>Turning it off / deleting this data:</strong> unfollow all bridges in the app and your token is immediately removed from our server. Tokens also expire automatically after 60 days. Uninstalling the app stops all notifications.</p>
+
     <h2>How Your Data is Stored</h2>
     <ul>
       <li><strong>Location data</strong> — Processed on your device in real-time, not stored permanently or transmitted</li>
       <li><strong>Trip logs</strong> — Stored locally on your device. You control when to delete them.</li>
       <li><strong>Settings preferences</strong> — Stored locally (theme, display options, etc.)</li>
+      <li><strong>Bridge notification data</strong> — If you follow a bridge for alerts, an anonymous push token and the bridges you follow are stored on our Cloudflare server (no location, no personal information). Removed when you unfollow all bridges; auto-expires after 60 days.</li>
       <li><strong>Subscription status</strong> — Cached locally by RevenueCat SDK for offline access. Synced with Apple/Google servers when online.</li>
       <li><strong>Crash reports</strong> — Sent to Sentry for error analysis, anonymized, stored for 90 days.</li>
     </ul>
@@ -367,6 +378,7 @@
       <li><strong>National Weather Service (NWS)</strong> — The App fetches local weather (temperature, conditions, wind, sunrise/sunset) from the U.S. National Weather Service API. Your approximate location is sent to NWS to retrieve weather for your area. No personal information is sent.</li>
       <li><strong>Google Maps Platform (map tiles)</strong> — Map display on both iOS and Android uses Google Maps tiles. Google may receive map tile requests for your viewport. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&rsquo;s Privacy Policy</a>.</li>
       <li><strong>Google Routes API and Places API (Premium+ navigation only)</strong> — The Premium+ navigation feature uses Google Routes API and Places API (via our Cloudflare Worker) to search destinations and calculate highway corridor route options. When you use these features, your current location, the text you type into the destination search, and the chosen destination coordinates are sent to Google via our server. If you do not use Premium+ navigation, no data is sent to Google Routes or Places. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&rsquo;s Privacy Policy</a>.</li>
+      <li><strong>Expo Push, Apple Push Notification service (APNs), Google Firebase Cloud Messaging (FCM)</strong> — Used to deliver optional bridge-opening notifications. If you follow a bridge, your anonymous device push token is shared with these services solely to deliver those notifications. No personal information is sent. See <a href="https://expo.dev/privacy" target="_blank" rel="noopener">Expo&rsquo;s Privacy Policy</a>.</li>
       <li><strong>Sentry</strong> — Anonymous crash reports and error logs to improve app stability. See <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Sentry&rsquo;s Privacy Policy</a></li>
       <li><strong>RevenueCat</strong> — Subscription management service. Processes anonymous subscription data. See <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat&rsquo;s Privacy Policy</a></li>
       <li><strong>Apple App Store / Google Play</strong> — Process subscription purchases. See <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple&rsquo;s Privacy Policy</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&rsquo;s Privacy Policy</a></li>
@@ -380,6 +392,7 @@
     <ul>
       <li><strong>Access</strong> — Request information about data we have collected</li>
       <li><strong>Delete</strong> — Clear all local data by uninstalling the app or clearing app data</li>
+      <li><strong>Delete bridge notification data</strong> — Unfollow all bridges in the app to immediately remove your push token from our server</li>
       <li><strong>Opt-out of crash reporting</strong> — Contact <a href="mailto:info@milecheckapp.com">info@milecheckapp.com</a> to request deletion of any stored crash data</li>
       <li><strong>Cancel subscription</strong> — Manage or cancel your subscription at any time through your App Store or Google Play settings</li>
     </ul>
@@ -392,6 +405,7 @@
     <ul>
       <li>Trip logs can be deleted individually or all at once from the Log tab</li>
       <li>Uninstalling the app removes all locally stored data (trips, settings, cached subscription status)</li>
+      <li>Bridge notifications: unfollow all bridges to remove your push token from our server (tokens also auto-expire after 60 days)</li>
       <li>Crash reports sent to Sentry are anonymized and automatically deleted after 90 days</li>
       <li>To cancel your subscription, use your device&rsquo;s App Store or Google Play subscription settings</li>
     </ul>
