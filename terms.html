@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — MileCheck</title>
+  <meta name="description" content="MileCheck Terms of Service. MileCheck is an informational driving aid; its data may not be scraped, redistributed, or used commercially without permission.">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #FFFFFF;
+      color: #000000;
+      line-height: 1.6;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a {
+      color: #000;
+      text-decoration: underline;
+      text-decoration-color: #999;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+    a:hover { text-decoration-color: #000; }
+    ul { list-style: none; padding: 0; }
+    .mono {
+      font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-feature-settings: "tnum";
+    }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid #E5E5E5;
+    }
+    .header-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; color: #000; text-decoration: none; }
+    .nav-back { font-size: 13px; font-weight: 500; color: #525252; text-decoration: none; }
+    .nav-back:hover { color: #000; }
+    .content { max-width: 720px; margin: 0 auto; padding: 64px 24px 48px; }
+    .doc-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 1.8px;
+      text-transform: uppercase; color: #999; margin-bottom: 16px;
+    }
+    h1 { font-size: 48px; font-weight: 800; letter-spacing: -1.8px; line-height: 1.05; color: #000; margin-bottom: 12px; }
+    .last-updated { font-size: 13px; font-weight: 500; color: #999; margin-bottom: 36px; letter-spacing: 0.2px; }
+    .last-updated .mono { color: #000; font-weight: 600; }
+    .intro { font-size: 17px; line-height: 1.6; color: #000; margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #E5E5E5; }
+    .highlight { padding: 24px 0; border-top: 1px solid #E5E5E5; border-bottom: 1px solid #E5E5E5; margin: 28px 0; }
+    .highlight-label { font-size: 10px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: #999; margin-bottom: 12px; }
+    .highlight-body { font-size: 15px; font-weight: 400; color: #000; line-height: 1.55; }
+    .highlight-body strong { font-weight: 600; }
+    h2 {
+      font-size: 22px; font-weight: 700; letter-spacing: -0.4px; line-height: 1.2; color: #000;
+      margin-top: 48px; margin-bottom: 18px; padding-top: 28px; border-top: 1px solid #E5E5E5;
+    }
+    h3 { font-size: 15px; font-weight: 700; letter-spacing: 0; color: #000; margin-top: 24px; margin-bottom: 10px; }
+    p { font-size: 15px; font-weight: 400; color: #525252; line-height: 1.65; margin-bottom: 14px; }
+    p strong { color: #000; font-weight: 600; }
+    .content ul:not(.highlight ul) { margin: 12px 0 18px 0; padding-left: 0; }
+    .content ul:not(.highlight ul) li {
+      font-size: 15px; color: #525252; padding: 8px 0; padding-left: 20px;
+      position: relative; line-height: 1.55; border-bottom: 1px solid #F2F2F2;
+    }
+    .content ul:not(.highlight ul) li:last-child { border-bottom: none; }
+    .content ul:not(.highlight ul) li::before {
+      content: ""; position: absolute; left: 0; top: 18px; width: 10px; height: 1px; background: #999;
+    }
+    .content ul:not(.highlight ul) li strong { color: #000; font-weight: 600; }
+    .site-footer { max-width: 720px; margin: 0 auto; padding: 32px 24px 48px; border-top: 1px solid #E5E5E5; }
+    .footer-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 16px; }
+    .footer-brand { font-size: 13px; font-weight: 700; letter-spacing: -0.3px; color: #000; }
+    .footer-links { display: flex; gap: 24px; font-size: 13px; font-weight: 500; }
+    .footer-links a { color: #525252; text-decoration: none; }
+    .footer-links a:hover { color: #000; }
+    .footer-fineprint { font-size: 11px; font-weight: 500; color: #999; letter-spacing: 0.2px; line-height: 1.5; }
+    @media (max-width: 600px) {
+      .content { padding: 40px 20px 32px; }
+      h1 { font-size: 36px; letter-spacing: -1.2px; }
+      h2 { font-size: 19px; margin-top: 36px; padding-top: 24px; }
+      .intro { font-size: 16px; }
+      .header-inner { padding: 0 20px; }
+      .site-footer { padding: 24px 20px 36px; }
+      .footer-links { gap: 16px; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="https://milecheckapp.com" class="brand">MileCheck</a>
+      <a href="https://milecheckapp.com" class="nav-back">&larr; milecheckapp.com</a>
+    </div>
+  </header>
+
+  <main class="content">
+    <p class="doc-label">Legal</p>
+    <h1>Terms of Service</h1>
+    <p class="last-updated">Last updated <span class="mono">June 28, 2026</span></p>
+
+    <p class="intro">These Terms of Service (&ldquo;Terms&rdquo;) govern your use of the MileCheck mobile application and related services (&ldquo;the App&rdquo;), provided by MileCheck LLC, a Wyoming limited liability company (&ldquo;MileCheck,&rdquo; &ldquo;we,&rdquo; &ldquo;us&rdquo;). By downloading, accessing, or using the App, you agree to these Terms. If you do not agree, do not use the App.</p>
+
+    <div class="highlight">
+      <div class="highlight-label">In plain terms</div>
+      <p class="highlight-body">MileCheck is an <strong>informational driving aid</strong> &mdash; mile marker positions are approximate and road, alert, and border data may be delayed or inaccurate. It is not a substitute for official signage, navigation, or emergency services, and you should never interact with the App while driving. The App, its brand, and its compiled and normalized road data are <strong>owned by MileCheck LLC</strong> and may not be scraped, redistributed, resold, or used commercially without our written permission. Subscriptions are billed by Apple or Google, and your use is also subject to the applicable app-store terms.</p>
+    </div>
+
+    <h2>1. The service</h2>
+    <p>MileCheck displays highway mile markers and aggregates publicly available road information &mdash; including state Department of Transportation (DOT) alerts and conditions, border-crossing wait times, weather, and related data &mdash; to help you understand where you are and what is on the road ahead. Some features are free; others require a paid subscription. We may add, change, or remove features at any time.</p>
+
+    <h2>2. Acceptance and eligibility</h2>
+    <p>By using the App you confirm that you are able to form a legally binding contract and will comply with these Terms and all applicable laws. If you use the App on behalf of an organization, you represent that you have authority to bind that organization to these Terms.</p>
+
+    <h2>3. Your license to use the App</h2>
+    <p>Subject to these Terms, MileCheck grants you a limited, personal, non-exclusive, non-transferable, non-sublicensable, and revocable license to install and use the App on a device you own or control, for your own personal, non-commercial use. We reserve all rights not expressly granted.</p>
+
+    <h2>4. Subscriptions and payments</h2>
+    <p>Paid features (&ldquo;Premium&rdquo; and any future tiers) are sold as auto-renewing subscriptions or one-time purchases through the Apple App Store or Google Play. <strong>All billing is handled by Apple or Google, not by MileCheck.</strong> Free trials, pricing, renewal, and cancellation are governed by the applicable app store. Your subscription renews automatically unless you cancel at least 24 hours before the end of the current period through your app-store account settings. Except where required by law or store policy, payments are non-refundable. We may change pricing or the features included in any tier on a going-forward basis.</p>
+
+    <h2>5. Acceptable use</h2>
+    <p>The data MileCheck collects, normalizes, and serves &mdash; including mile-marker datasets, DOT alerts and conditions, border-crossing data, and any derived or aggregated output (collectively, the &ldquo;MileCheck Data&rdquo;) &mdash; is a core part of our business. You agree that you will not, and will not permit anyone else to:</p>
+    <ul>
+      <li><strong>Scrape, crawl, harvest, or bulk-extract</strong> any MileCheck Data or content from the App or its underlying services or APIs;</li>
+      <li><strong>Redistribute, republish, resell, sublicense, lease, or otherwise make available</strong> the App or any MileCheck Data to a third party;</li>
+      <li><strong>Use the App or the MileCheck Data for any commercial purpose</strong> &mdash; including in any product, service, dataset, feed, fleet system, or application &mdash; without a separate written commercial license from MileCheck;</li>
+      <li><strong>Reverse engineer, decompile, or disassemble</strong> the App, or attempt to derive its source code, data structures, or normalization logic, except to the limited extent this restriction is prohibited by applicable law;</li>
+      <li><strong>Use the App or the MileCheck Data to build, train, or improve a competing product</strong>, service, dataset, or machine-learning model;</li>
+      <li><strong>Access the App through automated means</strong> (bots, scripts, scrapers) or in a way that exceeds normal personal use or unreasonably burdens our infrastructure;</li>
+      <li><strong>Remove, obscure, or alter</strong> any proprietary notice, attribution, or data-source acknowledgment;</li>
+      <li>Use the App in any unlawful manner, or in violation of any third-party data source&rsquo;s terms.</li>
+    </ul>
+    <p>If you want to license MileCheck Data for fleet, enterprise, or other commercial use, contact us &mdash; we offer commercial licenses.</p>
+
+    <h2>6. Ownership and intellectual property</h2>
+    <p>The App, the MileCheck name and logo, and the compiled, normalized, and derived MileCheck Data are owned by MileCheck LLC and are protected by intellectual-property laws. These Terms do not transfer any ownership to you. While the underlying public records (for example, raw DOT feeds) may be available from their original sources, our selection, normalization, aggregation, and presentation of that data are our proprietary work product.</p>
+
+    <h2>7. Third-party data and sources</h2>
+    <p>MileCheck incorporates data from state DOTs, U.S. and Canadian border agencies, the National Weather Service, and other public sources. That data is provided by those sources &ldquo;as is,&rdquo; may be delayed, incomplete, or inaccurate, and remains subject to the terms and disclaimers of its originating agency. MileCheck is not responsible for the accuracy, availability, or content of third-party data, and your use of it must comply with the originating source&rsquo;s requirements.</p>
+
+    <h2>8. Safety and assumption of risk</h2>
+    <p><strong>MileCheck is an informational aid only.</strong> Mile marker positions are approximate and may not reflect actual sign locations. Road, alert, weather, and border information may be delayed, incomplete, or wrong. The App is <strong>not</strong> a navigation system, an emergency service, or a substitute for official road signage, posted conditions, law enforcement, or 911.</p>
+    <p>Do not view, tap, or otherwise interact with the App while operating a vehicle. Always follow the road, posted signs, and the directions of authorities. You assume all risk arising from your use of the App and your reliance on any information it provides.</p>
+
+    <h2>9. App-store terms</h2>
+    <p>The App is licensed, not sold, to you. Your use is also governed by the terms of the platform from which you obtained the App &mdash; the Apple Media Services Terms and the Apple Licensed Application End User License Agreement (the &ldquo;Apple Standard EULA&rdquo;) for iOS, and the Google Play Terms of Service for Android. To the extent of any conflict between these Terms and the applicable app-store terms regarding distribution of, or in-app purchases within, the App, the app-store terms control.</p>
+    <p>For Apple App Store users, the following additionally applies:</p>
+    <ul>
+      <li>These Terms are between you and MileCheck LLC only, and not with Apple. Apple is not responsible for the App or its content.</li>
+      <li>Apple has no obligation to furnish any maintenance or support for the App.</li>
+      <li>Your license to use the App is limited to a non-transferable license to use it on any Apple-branded device you own or control, as permitted by the App Store Usage Rules.</li>
+      <li>MileCheck LLC, not Apple, is solely responsible for the App. If the App fails to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price (if any); to the maximum extent permitted by law, Apple has no other warranty obligation.</li>
+      <li>MileCheck LLC, not Apple, is responsible for addressing any claims relating to the App, including product-liability, regulatory, consumer-protection, and intellectual-property claims.</li>
+      <li>You represent that you are not located in a country subject to a U.S. Government embargo or designated as &ldquo;terrorist-supporting,&rdquo; and that you are not listed on any U.S. Government list of prohibited or restricted parties.</li>
+      <li>Apple and its subsidiaries are third-party beneficiaries of these Terms and, upon your acceptance, have the right to enforce them against you.</li>
+    </ul>
+
+    <h2>10. Disclaimer of warranties</h2>
+    <p>The App and all MileCheck Data are provided &ldquo;as is&rdquo; and &ldquo;as available,&rdquo; without warranties of any kind, whether express or implied, including any implied warranties of merchantability, fitness for a particular purpose, accuracy, or non-infringement. We do not warrant that the App will be uninterrupted, error-free, or accurate. Some jurisdictions do not allow the exclusion of certain warranties, so some of these exclusions may not apply to you.</p>
+
+    <h2>11. Limitation of liability</h2>
+    <p>To the maximum extent permitted by law, MileCheck LLC and its members will not be liable for any indirect, incidental, special, consequential, or punitive damages, or for any loss arising from your use of, or reliance on, the App or any MileCheck Data &mdash; including any vehicle incident, missed closure, delay, or inaccurate information. Our total liability for any claim relating to the App will not exceed the greater of the amount you paid us for the App in the twelve months before the claim, or fifty U.S. dollars (US$50). Some jurisdictions do not allow certain limitations, so some of these may not apply to you.</p>
+
+    <h2>12. Indemnification</h2>
+    <p>You agree to indemnify and hold harmless MileCheck LLC and its members from any claim, loss, or expense (including reasonable legal fees) arising out of your misuse of the App, your violation of these Terms, or your violation of any law or third-party right.</p>
+
+    <h2>13. Privacy</h2>
+    <p>Your use of the App is also governed by our <a href="https://milecheck.github.io/milecheck-privacy/">Privacy Policy</a>, which explains how we handle your information. In short, your precise location stays on your device and we do not sell your data.</p>
+
+    <h2>14. Changes to the App and these Terms</h2>
+    <p>We may update these Terms from time to time. When we do, we will revise the &ldquo;Last updated&rdquo; date above. Material changes will be reflected here, and your continued use of the App after changes take effect constitutes acceptance of the revised Terms. If you do not agree to a change, stop using the App.</p>
+
+    <h2>15. Termination</h2>
+    <p>We may suspend or terminate your access to the App at any time if you breach these Terms or misuse the App or MileCheck Data. You may stop using the App at any time. Sections that by their nature should survive termination &mdash; including ownership, acceptable use, disclaimers, limitation of liability, and indemnification &mdash; will survive.</p>
+
+    <h2>16. Governing law and disputes</h2>
+    <p>These Terms are governed by the laws of the State of Wyoming, without regard to its conflict-of-laws rules. Before filing any formal claim, you agree to first contact us at info@milecheckapp.com and attempt to resolve the dispute informally for at least 30 days. Any dispute that cannot be resolved informally will be subject to the exclusive jurisdiction of the state and federal courts located in Wyoming, and you consent to that jurisdiction and venue, except where applicable law gives you the right to bring a claim in your local courts. Notwithstanding the foregoing, MileCheck may seek injunctive or other equitable relief to protect its intellectual-property rights or the MileCheck Data in any court of competent jurisdiction.</p>
+
+    <h2>17. Miscellaneous</h2>
+    <p>If any provision of these Terms is found unenforceable, the rest remain in effect. Our failure to enforce a provision is not a waiver of it. You may not assign these Terms without our consent; we may assign them in connection with a merger, acquisition, or sale of assets. These Terms, together with the Privacy Policy and the applicable app-store terms, are the entire agreement between you and MileCheck regarding the App.</p>
+
+    <h2>18. Contact</h2>
+    <p>Questions, complaints, or commercial-licensing inquiries: <strong>info@milecheckapp.com</strong>.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-row">
+      <span class="footer-brand">MileCheck</span>
+      <div class="footer-links">
+        <a href="https://milecheck.github.io/milecheck-privacy/">Privacy Policy</a>
+        <a href="https://milecheckapp.com">milecheckapp.com</a>
+      </div>
+    </div>
+    <p class="footer-fineprint">&copy; 2026 MileCheck LLC. MileCheck is an informational aid; mile marker positions are approximate and may not reflect actual sign locations.</p>
+  </footer>
+
+</body>
+</html>
