@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — MileCheck</title>
-  <meta name="description" content="MileCheck privacy policy. Your precise location stays on your device. We do not sell your data.">
+  <meta name="description" content="MileCheck privacy policy. Your location is used on your device to find mile markers; optional features send it only to provide that feature. We never sell your location.">
   <link rel="icon" type="image/png" href="images/favicon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -284,13 +284,13 @@
   <main class="content">
     <p class="doc-label">Legal</p>
     <h1>Privacy Policy</h1>
-    <p class="last-updated">Last updated <span class="mono">July 14, 2026</span></p>
+    <p class="last-updated">Last updated <span class="mono">July 23, 2026</span></p>
 
     <p class="intro">MileCheck (&ldquo;the App&rdquo;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
 
     <div class="highlight">
       <div class="highlight-label">Summary</div>
-      <p class="highlight-body">Your precise location data stays on your device. We use Sentry to collect anonymous crash reports to improve stability. Subscription purchases are processed by Apple and Google, not by MileCheck. We do not sell your data or share personally identifiable information with third parties. If you opt into bridge-opening notifications, we store an anonymous device notification token and the bridges you follow on our server &mdash; no location, no personal information. We also collect anonymous, aggregate feature-usage counters that contain no location, identifiers, or personal information.</p>
+      <p class="highlight-body">Your precise location is used <strong>on your device</strong> to find mile markers, and your trip history never leaves your phone. A few optional features send location off your device only to provide that feature: weather (to the National Weather Service), route planning (to Google, via our server), and wildfire alerts. If you turn on wildfire alerts, we store a <strong>rounded, approximate</strong> location (rounded to about 11 km / 7 miles) with your notification registration so we can tell you about new fires near you &mdash; see Push Notifications below. We use Sentry to collect anonymous crash reports to improve stability. Subscription purchases are processed by Apple and Google, not by MileCheck. We also collect anonymous, aggregate feature-usage counters that contain no location, identifiers, or personal information. <strong>We never sell your location or your data</strong>, and we never share personally identifiable information with third parties.</p>
     </div>
 
     <h2>Information We Access</h2>
@@ -302,9 +302,10 @@
       <li><strong>Show your current speed and direction</strong> — helps you stay oriented on the road</li>
       <li><strong>Auto-detect your state</strong> — loads the correct milepost and alert data for your region</li>
       <li><strong>Log trip sessions</strong> — if you choose to use the trip logging feature</li>
-      <li><strong>Plan a highway corridor</strong> — if you use the Premium+ navigation feature, your current location and your typed destination are sent to Google Routes API and Google Places API via our server. See the Google Maps Platform entry under Third-Party Services for details.</li>
+      <li><strong>Plan a highway corridor</strong> — if you use the Premium route-planning feature, your current location and your typed destination are sent to Google Routes API and Google Places API via our server. See the Google Maps Platform entry under Third-Party Services for details.</li>
+      <li><strong>Alert you to nearby wildfires</strong> — if you turn on wildfire alerts (off by default), a rounded, approximate location is stored with your notification registration so we can notify you about new fires near you even when the app is closed. See Push Notifications below.</li>
     </ul>
-    <p><strong>Important:</strong> Your precise GPS coordinates are processed on your device for milepost calculations and are never stored on our servers. Approximate location is sent to third parties to retrieve weather, route planning, and road alert data, as detailed below.</p>
+    <p><strong>Important:</strong> Your precise GPS coordinates are processed on your device for milepost calculations, and your precise coordinates and trip history are never stored on our servers. Approximate location is sent to third parties to retrieve weather, route planning, and road alert data, as detailed below. The one exception where location is <em>retained</em> on our server is the optional wildfire-alert feature, which stores a rounded, approximate location with your notification registration &mdash; described in full under Push Notifications.</p>
 
     <h3>Trip Log Data</h3>
     <p>If you use the trip logging feature, the App stores on your device:</p>
@@ -351,14 +352,27 @@
     <p>We collect <strong>anonymous, aggregate feature-usage counters</strong> to understand which features are used (for example, how many times a crosswind warning was shown, or a route was planned). Each event records only the feature name, an optional two-letter US state, and an optional short category tag. These counters are <strong>never</strong> linked to you: they contain no coordinates, no routes or mileposts, no device, user, or session identifiers, no IP address, and no user-agent information. They cannot be used to identify you or reconstruct your travel.</p>
 
     <h2>Push Notifications</h2>
-    <p>MileCheck offers optional push notifications for Seattle drawbridge openings. They are <strong>off by default</strong> &mdash; you receive them only if you choose to &ldquo;follow&rdquo; one or more bridges in the app.</p>
-    <p>So that we can notify you when a followed bridge is raised <strong>even while the app is closed</strong>, we store the following on our server (Cloudflare) when you follow a bridge:</p>
+    <p>MileCheck offers two kinds of optional push notifications: <strong>Seattle drawbridge openings</strong> and <strong>nearby wildfire alerts</strong>. Both are <strong>off by default</strong> and both work even while the app is closed, which means we have to store a small amount of information on our server (Cloudflare) while they are turned on.</p>
+
+    <h3>Drawbridge notifications</h3>
+    <p>You receive these only if you choose to &ldquo;follow&rdquo; one or more Seattle drawbridges in the app. While you do, we store:</p>
     <ul>
       <li>An anonymous <strong>push notification token</strong> for your device (issued by Apple or Google via Expo). This is a device identifier used solely to deliver notifications. It is <strong>not</strong> linked to your name, email, or any personal information, and MileCheck has no user-account system.</li>
       <li>The <strong>list of bridges you follow</strong>, so we only notify you about the bridges you care about.</li>
     </ul>
-    <p>We do <strong>not</strong> store your location, trips, or any personal data on our server. The push token is shared with the notification delivery services &mdash; <strong>Expo Push, Apple Push Notification service (APNs), and Google Firebase Cloud Messaging (FCM)</strong> &mdash; for the sole purpose of delivering these notifications. We never use it for tracking or advertising.</p>
-    <p><strong>Turning it off / deleting this data:</strong> unfollow all bridges in the app and your token is immediately removed from our server. Tokens also expire automatically after 60 days. Uninstalling the app stops all notifications.</p>
+    <p>No location is stored for drawbridge notifications.</p>
+
+    <h3>Wildfire alerts</h3>
+    <p>If you turn on wildfire alerts in Settings, we store, alongside the same anonymous push token:</p>
+    <ul>
+      <li>A <strong>rounded, approximate location</strong> &mdash; your coordinates are rounded on your device before they are sent, to one decimal place of latitude and longitude (roughly 11 km / 7 miles, about the size of a city). We use it to work out which new fires are near enough to be worth telling you about. We never store your precise coordinates, your route, or a location history &mdash; only the single most recent rounded point, which is <em>replaced</em> (never appended to) and only re-sent when you have moved about 12 miles or more.</li>
+      <li>Your <strong>alert preferences</strong> &mdash; the distance you chose and the minimum fire size you want to hear about.</li>
+    </ul>
+    <p>This is the only feature that retains any location on our server. It exists solely to deliver the alerts you asked for &mdash; it is never used for tracking, profiling, advertising, or analytics, and it is never sold or shared with third parties.</p>
+
+    <h3>Both types</h3>
+    <p>The push token is shared with the notification delivery services &mdash; <strong>Expo Push, Apple Push Notification service (APNs), and Google Firebase Cloud Messaging (FCM)</strong> &mdash; for the sole purpose of delivering these notifications. We never use it for tracking or advertising.</p>
+    <p><strong>Turning it off / deleting this data:</strong> unfollow all bridges, or switch wildfire alerts off in Settings, and the corresponding data is removed from our server. (If your device is offline at that moment, the removal is retried automatically the next time the app runs.) Registrations also expire automatically after 60 days without an update. Uninstalling the app stops all notifications.</p>
 
     <h2>Newsletter (The Monthly Road Report)</h2>
     <p>Our <strong>website</strong> (milecheckapp.com) offers an optional email newsletter, the Monthly Road Report. This is entirely separate from the App &mdash; <strong>the App itself never collects or asks for your email address</strong>, and subscribing is never required to use the App or the website.</p>
@@ -371,10 +385,11 @@
 
     <h2>How Your Data is Stored</h2>
     <ul>
-      <li><strong>Location data</strong> — Processed on your device in real-time, not stored permanently or transmitted</li>
+      <li><strong>Location data</strong> — Processed on your device in real-time for mile markers; precise coordinates are never stored on our servers. Sent off-device only to provide an optional feature you use (weather, route planning, wildfire alerts), as described above.</li>
       <li><strong>Trip logs</strong> — Stored locally on your device. You control when to delete them.</li>
       <li><strong>Settings preferences</strong> — Stored locally (theme, display options, etc.)</li>
       <li><strong>Bridge notification data</strong> — If you follow a bridge for alerts, an anonymous push token and the bridges you follow are stored on our Cloudflare server (no location, no personal information). Removed when you unfollow all bridges; auto-expires after 60 days.</li>
+      <li><strong>Wildfire alert data</strong> — If you turn wildfire alerts on, an anonymous push token, your alert preferences, and a single <strong>rounded, approximate</strong> location (rounded to about 11 km / 7 miles) are stored on our Cloudflare server. Removed when you turn wildfire alerts off; auto-expires after 60 days without an update.</li>
       <li><strong>Subscription status</strong> — Cached locally by RevenueCat SDK for offline access. Synced with Apple/Google servers when online.</li>
       <li><strong>Crash reports</strong> — Sent to Sentry for error analysis, anonymized, stored for 90 days.</li>
     </ul>
@@ -386,7 +401,7 @@
       <li><strong>State DOT APIs</strong> — Road condition, incident, and closure data from official state Department of Transportation APIs in 31 U.S. states (the current list of supported states is visible in the app&rsquo;s Settings). Requests are proxied through our Cloudflare Worker. No personal data is sent to these services.</li>
       <li><strong>National Weather Service (NWS)</strong> — The App fetches local weather (temperature, conditions, wind, sunrise/sunset) from the U.S. National Weather Service API. Your approximate location is sent to NWS to retrieve weather for your area. No personal information is sent.</li>
       <li><strong>Google Maps Platform (map tiles)</strong> — Map display on both iOS and Android uses Google Maps tiles. Google may receive map tile requests for your viewport. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&rsquo;s Privacy Policy</a>.</li>
-      <li><strong>Google Routes API and Places API (Premium+ navigation only)</strong> — The Premium+ navigation feature uses Google Routes API and Places API (via our Cloudflare Worker) to search destinations and calculate highway corridor route options. When you use these features, your current location, the text you type into the destination search, and the chosen destination coordinates are sent to Google via our server. If you do not use Premium+ navigation, no data is sent to Google Routes or Places. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&rsquo;s Privacy Policy</a>.</li>
+      <li><strong>Google Routes API and Places API (Premium route planning only)</strong> — The Premium route-planning feature uses Google Routes API and Places API (via our Cloudflare Worker) to search destinations and calculate highway corridor route options. When you use these features, your current location, the text you type into the destination search, and the chosen destination coordinates are sent to Google via our server. This data is used to answer that request; we do not store it. If you do not use route planning, no data is sent to Google Routes or Places. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&rsquo;s Privacy Policy</a>.</li>
       <li><strong>Expo Push, Apple Push Notification service (APNs), Google Firebase Cloud Messaging (FCM)</strong> — Used to deliver optional bridge-opening notifications. If you follow a bridge, your anonymous device push token is shared with these services solely to deliver those notifications. No personal information is sent. See <a href="https://expo.dev/privacy" target="_blank" rel="noopener">Expo&rsquo;s Privacy Policy</a>.</li>
       <li><strong>Sentry</strong> — Anonymous crash reports and error logs to improve app stability. See <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Sentry&rsquo;s Privacy Policy</a></li>
       <li><strong>RevenueCat</strong> — Subscription management service. Processes anonymous subscription data. See <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat&rsquo;s Privacy Policy</a></li>
