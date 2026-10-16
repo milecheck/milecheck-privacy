@@ -284,7 +284,7 @@
   <main class="content">
     <p class="doc-label">Legal</p>
     <h1>Privacy Policy</h1>
-    <p class="last-updated">Last updated <span class="mono">July 23, 2026</span></p>
+    <p class="last-updated">Last updated <span class="mono">October 16, 2026</span></p>
 
     <p class="intro">MileCheck (&ldquo;the App&rdquo;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
 
@@ -301,7 +301,7 @@
       <li><strong>Display your nearest mile marker</strong> — the core function of the app, calculated on your device</li>
       <li><strong>Show your current speed and direction</strong> — helps you stay oriented on the road</li>
       <li><strong>Auto-detect your state</strong> — loads the correct milepost and alert data for your region</li>
-      <li><strong>Log trip sessions</strong> — if you choose to use the trip logging feature</li>
+      <li><strong>Log trip sessions</strong> — if you choose to use the trip logging feature. If you also turn on &ldquo;Track trips while locked&rdquo; in Settings (off by default), the App keeps reading your location in the background, only during a trip you started, so the log records the route, direction and miles for the whole drive. It stops when the trip ends. Android shows a notification while it runs. Trips stay on your device.</li>
       <li><strong>Plan a highway corridor</strong> — if you use the Premium route-planning feature, your current location and your typed destination are sent to Google Routes API and Google Places API via our server. See the Google Maps Platform entry under Third-Party Services for details.</li>
       <li><strong>Alert you to nearby wildfires</strong> — if you turn on wildfire alerts (off by default), a rounded, approximate location is stored with your notification registration so we can notify you about new fires near you even when the app is closed. See Push Notifications below.</li>
     </ul>
@@ -383,6 +383,15 @@
       <li><strong>Unsubscribing:</strong> every newsletter includes a one-click unsubscribe link. You can also email <a href="mailto:feedback@milecheckapp.com">feedback@milecheckapp.com</a> to have your address deleted from the list entirely.</li>
     </ul>
 
+    <h2>Our Website</h2>
+    <p>This section covers milecheckapp.com. It does not change anything about the App.</p>
+    <ul>
+      <li><strong>Sign-up forms:</strong> if you join a waitlist (for example the Dash display) or ask about a store board, we keep the details you type in, such as your email, name, role, business name, address and phone. We use them only to follow up on what you asked for. Email <a href="mailto:info@milecheckapp.com">info@milecheckapp.com</a> and we&rsquo;ll delete them.</li>
+      <li><strong>Sponsors:</strong> businesses that sponsor a page pay through Stripe. Stripe handles the card. We receive the business name, contact and billing email, phone, website and the sponsor text.</li>
+      <li><strong>Ads:</strong> the website may show ads served by a third-party ad network, such as Mediavine. Ad networks and their partners may use cookies and similar technologies to show ads and measure them, and may collect information such as your IP address, browser and pages viewed. You can manage cookies in your browser settings. The App does not show these ads.</li>
+      <li><strong>Usage counts:</strong> our server counts requests to measure use and block abuse. Where it needs to tell requests apart, it stores a one-way, salted hash of the IP address, never the address itself.</li>
+    </ul>
+
     <h2>How Your Data is Stored</h2>
     <ul>
       <li><strong>Location data</strong> — Processed on your device in real-time for mile markers; precise coordinates are never stored on our servers. Sent off-device only to provide an optional feature you use (weather, route planning, wildfire alerts), as described above.</li>
@@ -398,7 +407,7 @@
     <p>The App uses the following third-party services. Where the App sends data to a third party, we describe what is sent.</p>
     <ul>
       <li><strong>Cloudflare Workers (our server)</strong> — The App routes some requests through a Cloudflare Worker we operate, which proxies requests to state DOT APIs and Google Maps Platform APIs. No personally identifiable information is sent through the Worker; requests carry only the state code, route coordinates, or destination text needed to fulfill the request.</li>
-      <li><strong>State DOT APIs</strong> — Road condition, incident, and closure data from official state Department of Transportation APIs in 31 U.S. states (the current list of supported states is visible in the app&rsquo;s Settings). Requests are proxied through our Cloudflare Worker. No personal data is sent to these services.</li>
+      <li><strong>State DOT APIs</strong> — Road condition, incident, and closure data from official state and provincial transportation agencies in all 50 U.S. states and in British Columbia, Alberta and Manitoba. Requests are proxied through our Cloudflare Worker. No personal data is sent to these services.</li>
       <li><strong>National Weather Service (NWS)</strong> — The App fetches local weather (temperature, conditions, wind, sunrise/sunset) from the U.S. National Weather Service API. Your approximate location is sent to NWS to retrieve weather for your area. No personal information is sent.</li>
       <li><strong>Google Maps Platform (map tiles)</strong> — Map display on both iOS and Android uses Google Maps tiles. Google may receive map tile requests for your viewport. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&rsquo;s Privacy Policy</a>.</li>
       <li><strong>Google Routes API and Places API (Premium route planning only)</strong> — The Premium route-planning feature uses Google Routes API and Places API (via our Cloudflare Worker) to search destinations and calculate highway corridor route options. When you use these features, your current location, the text you type into the destination search, and the chosen destination coordinates are sent to Google via our server. This data is used to answer that request; we do not store it. If you do not use route planning, no data is sent to Google Routes or Places. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&rsquo;s Privacy Policy</a>.</li>
